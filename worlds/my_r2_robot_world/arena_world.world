@@ -1,0 +1,618 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='arena'>
+      <link name='base_link'>
+        <inertial>
+          <pose>0 0.075546 -2.07458 0 -0 0</pose>
+          <mass>13931.5</mass>
+          <inertia>
+            <ixx>19802.3</ixx>
+            <ixy>-6.65987e-07</ixy>
+            <ixz>-1.17319e-05</ixz>
+            <iyy>173916</iyy>
+            <iyz>77.5555</iyz>
+            <izz>154201</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://arena/meshes/base_link.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://arena/meshes/base_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.73965 1.73846 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.694564 5.00085 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_0'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.84579 2.60452 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_1'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.9809 4.77789 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_2'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.32696 4.89543 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_3'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.96688 5.47551 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_4'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.741784 6.44708 0 0 -0 0</pose>
+    </model>
+    <model name='blue_ball_5'>
+      <link name='blue_ball'>
+        <inertial>
+          <pose>0 -0 0 0 -0 0</pose>
+          <mass>3.5914</mass>
+          <inertia>
+            <ixx>0.012965</ixx>
+            <ixy>-3.5265e-34</ixy>
+            <ixz>0</ixz>
+            <iyy>0.012965</iyy>
+            <iyz>0</iyz>
+            <izz>0.012965</izz>
+          </inertia>
+        </inertial>
+        <collision name='blue_ball_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='blue_ball_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.927082 6.48379 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>983 137000000</sim_time>
+      <real_time>1570 874971081</real_time>
+      <wall_time>1705182727 456265598</wall_time>
+      <iterations>983137</iterations>
+      <model name='arena'>
+        <pose>0.000172 0.004891 -0 0 0 -2.8e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose>0.000172 0.004891 -0 0 0 -2.8e-05</pose>
+          <velocity>0 -0 0.002378 0.001197 0.000774 -0</velocity>
+          <acceleration>-1.60599 2.4835 2.46857 1.19694 0.774099 0</acceleration>
+          <wrench>-22373.9 34598.9 34391 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball'>
+        <pose>0.00941 4.02949 0.404794 -2.2463 -0.100742 -1.74553</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>0.00941 4.02949 0.404794 -2.2463 -0.100742 -1.74553</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.269313 -0.029085 2.24683 2.72783 -0.392164 1.89036</acceleration>
+          <wrench>-0.967211 -0.104455 8.06925 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_0'>
+        <pose>-0.003107 2.52566 0.404698 2.13884 -0.624581 -1.30533</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>-0.003107 2.52566 0.404698 2.13884 -0.624581 -1.30533</pose>
+          <velocity>0.000211 0.000313 -0.005184 0.000643 0.004773 6.8e-05</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -35.1957 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_1'>
+        <pose>0.002233 3.28115 0.404709 0.774052 -0.209136 3.088</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>0.002233 3.28115 0.404709 0.774052 -0.209136 3.088</pose>
+          <velocity>-0.00012 -0.000413 0.00636 0.000448 -0.003798 -0.000293</velocity>
+          <acceleration>-0.120422 -0.413324 6.36038 -2.69404 0.656375 2.84885</acceleration>
+          <wrench>-0.432485 -1.48441 22.8427 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_2'>
+        <pose>-0.001249 4.77748 0.404631 -2.75655 0.208445 0.196749</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>-0.001249 4.77748 0.404631 -2.75655 0.208445 0.196749</pose>
+          <velocity>7.1e-05 -0.000885 -0.011488 0.005451 -0.001761 -0.000238</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -35.1957 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_3'>
+        <pose>0.005445 5.52409 0.404674 -0.667682 -0.682714 -2.25747</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>0.005445 5.52409 0.404674 -0.667682 -0.682714 -2.25747</pose>
+          <velocity>0.00125 0.000115 0.009061 -0.004646 0.011686 -0.011568</velocity>
+          <acceleration>0.162884 -1.52008 8.00108 -0.565375 -1.07983 -2.17861</acceleration>
+          <wrench>0.584982 -5.45922 28.7351 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_4'>
+        <pose>-0.005357 5.53421 0.593717 0.61031 0.337729 0.568644</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>-0.005357 5.53421 0.593717 0.61031 0.337729 0.568644</pose>
+          <velocity>0.001167 0.004654 0.018864 -0.042958 -0.002743 0.041668</velocity>
+          <acceleration>-2.69611 1.34147 47.5668 1.33126 0.19168 -0.618712</acceleration>
+          <wrench>-9.68279 4.81776 170.832 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blue_ball_5'>
+        <pose>0.02868 5.52769 0.780036 -0.575787 -0.819433 0.342196</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_ball'>
+          <pose>0.02868 5.52769 0.780036 -0.575787 -0.819433 0.342196</pose>
+          <velocity>-0.001893 0.004701 -0.027051 -0.012122 -0.135554 -0.05181</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -35.1957 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>10.2151 -11.3422 5.16678 0 0.464 2.12319</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <!-- Import our own robot -->
+    <include>
+      <!-- Set the location where we want to spawn the robot -->
+      <pose>5.5 -5.66 0.033334 -0.000025 0.000184 1.58</pose>
+      <!-- basic_mobile_robot -->
+      <uri>model://my_r2_robot_description</uri>
+    </include>
+
+
+  </world>
+</sdf>

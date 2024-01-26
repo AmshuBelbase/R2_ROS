@@ -1,0 +1,36 @@
+<sdf version='1.7'>
+  <model name='red_ball'>
+    <link name='red_ball'>
+      <inertial>
+        <pose>0 -0 0 0 -0 0</pose>
+        <mass>3.59136</mass>
+        <inertia>
+          <ixx>0.00117325</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00117325</iyy>
+          <iyz>0</iyz>
+          <izz>0.00117325</izz>
+        </inertia>
+      </inertial>
+      <collision name='red_ball_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://red_ball/meshes/red_ball.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='red_ball_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://red_ball/meshes/red_ball.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

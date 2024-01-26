@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<robot name="R2 Bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- 
+  	Run the following code by navigating to this folder to generate urdf file !
+  	
+  	xacro robo.urdf.xacro > model.urdf
+-->  
+ 
+<!-- <xacro:include filename="planar_plugin.gazebo.xacro"/> -->
+<xacro:include filename="base_link.xacro"/>
+<xacro:include filename="wheels.xacro"/>
+<xacro:include filename="rollers.xacro"/>
+
+  <!-- ****************** ROBOT BASE FOOTPRINT ***************************  -->
+  <!-- Define the center of the main robot chassis projected on the ground -->	
+  <link name="base_footprint"/>
+
+  <!-- The base footprint of the robot is located underneath the chassis -->
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0.0 0.0 7.0" rpy="0 0 0"/>
+  </joint>
+    	
+  <xacro:base pkg="my_r2_robot"/>  
+  
+  <!-- jrpy="0 0 -0.785398163397448" for front_left for others 0 0 0-->
+  
+  <xacro:wheel pos_side="front_left" ixyz="-2.65468202975683E-13 -2.22044604925031E-16 4.91273688396632E-14" pkg="my_r2_robot" jxyz="0.244026406871192 0.244026406871192 0.0399999999999999" jrpy="0 0 -0.785398163397448" axyz="0 1 0"/>
+  
+  <xacro:wheel pos_side="back_left" ixyz="0 -5.55111512312578E-17 0" pkg="my_r2_robot" jxyz="-0.244026406871192 0.244026406871192 0.0399999999999999" jrpy="0 0 0" axyz="-0.707106781186557 0.707106781186538 0"/>
+  
+  <xacro:wheel pos_side="front_right" ixyz="-4.44089209850063E-16 4.44089209850063E-16 -2.77555756156289E-16" pkg="my_r2_robot" jxyz="0.244026406871196 -0.244026406871192 0.0400000000000001" jrpy="0 0 0" axyz="0.707106781186555 -0.70710678118654 0"/>
+  
+  <xacro:wheel pos_side="back_right" ixyz="-5.75539615965681E-13 5.25468557555087E-13 5.21249710061511E-14" pkg="my_r2_robot" jxyz="-0.244026406871195 -0.244026406871195 0.0399999999999999" jrpy="0 0 0" axyz="-0.707106781186548 -0.707106781186547 0"/>  	
+  
+  <xacro:roller pos_side="front_left" ixyz="-2.33146835171283E-15 1.66533453693773E-16 7.21644966006352E-16" pkg="my_r2_robot" jxyz="0.244026406871192 0.244026406871192 0.0399999999999999" jrpy="0 0 -0.785398163397448" axyz="1 0 0"/>
+  
+  <xacro:roller pos_side="back_left" ixyz="-1.11022302462516E-16 -2.77555756156289E-16 5.55111512312578E-17" pkg="my_r2_robot" jxyz="-0.244026406871192 0.244026406871192 0.0399999999999999" jrpy="0 0 0" axyz="-0.707106781186548 -0.707106781186547 0"/>
+  
+  <xacro:roller pos_side="back_right" ixyz="-1.99840144432528E-15 1.66533453693773E-15 0" pkg="my_r2_robot" jxyz="-0.244026406871195 -0.244026406871195 0.0399999999999999" jrpy="0 0 0" axyz="0.707106781186547 -0.707106781186548 0"/>
+  
+  <xacro:roller pos_side="front_right" ixyz="-3.88578058618805E-16 4.44089209850063E-16 -2.77555756156289E-16" pkg="my_r2_robot" jxyz="0.244026406871196 -0.244026406871192 0.0400000000000001" jrpy="0 0 0" axyz="-0.707106781186549 -0.707106781186545 0"/>  
+   
+  <!-- <xacro:omni_steering/> -->
+  
+</robot>

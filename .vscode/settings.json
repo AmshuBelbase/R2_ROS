@@ -1,0 +1,24 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/amshu/ros2_ws/build/r2_test",
+    "/home/amshu/ros2_ws/build/py_launch_example",
+    "/home/amshu/ros2_ws/build/my_robot_controller",
+    "/home/amshu/ros2_ws/install/r2_test/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/r2_package/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/py_launch_example/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/amshu/ros2_ws/build/r2_test",
+    "/home/amshu/ros2_ws/build/py_launch_example",
+    "/home/amshu/ros2_ws/build/my_robot_controller",
+    "/home/amshu/ros2_ws/install/r2_test/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/r2_package/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/py_launch_example/lib/python3.10/site-packages",
+    "/home/amshu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ]
+}

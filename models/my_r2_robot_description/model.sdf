@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <model name='R2'>
+
+    <!-- ****************** ROBOT BASE FOOTPRINT ***************************  -->
+  <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent>base_footprint</parent>
+    <child>base_link</child>
+    <pose>0 0 0 0 0 0</pose>
+  </joint>
+
+    <link name='base_link'>
+      <inertial>
+        <pose>0.006748 -0 0.088773 0 -0 0</pose>
+        <mass>18</mass>
+        <inertia>
+          <ixx>1.2675</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.2675</iyy>
+          <iyz>0</iyz>
+          <izz>1.2675</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='back_left_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.244026 0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>back_left</child>
+      <axis>
+        <xyz>-0.707107 0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='back_left'>
+      <pose relative_to='back_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>-6.33213e-05</ixy>
+          <ixz>-3.38813e-20</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>2.24464e-20</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='back_left_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_left.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='back_left_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_left.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='back_left_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.244026 0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>back_left_roller</child>
+      <axis>
+        <xyz>-0.707107 -0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='back_left_roller'>
+      <pose relative_to='back_left_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>6.33213e-05</ixy>
+          <ixz>-7.91976e-20</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>-7.15743e-20</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='back_left_roller_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_left_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='back_left_roller_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_left_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='back_right_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.244026 -0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>back_right</child>
+      <axis>
+        <xyz>-0.707107 -0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='back_right'>
+      <pose relative_to='back_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>6.33213e-05</ixy>
+          <ixz>-4.06576e-20</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>-5.29396e-20</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='back_right_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_right.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='back_right_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_right.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='back_right_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.244026 -0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>back_right_roller</child>
+      <axis>
+        <xyz>0.707107 -0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='back_right_roller'>
+      <pose relative_to='back_right_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>-6.33213e-05</ixy>
+          <ixz>-1.50348e-19</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>1.60089e-19</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='back_right_roller_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_right_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='back_right_roller_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/back_right_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_left_joint' type='revolute'>
+      <pose relative_to='base_link'>0.244026 0.244026 0.04 0 0 -0.785398</pose>
+      <parent>base_link</parent>
+      <child>front_left</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left'>
+      <pose relative_to='front_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000128754</ixx>
+          <ixy>-8.30092e-20</ixy>
+          <ixz>-4.8572e-21</ixz>
+          <iyy>0.000255396</iyy>
+          <iyz>-2.18535e-19</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_left.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='front_left_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_left.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_left_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>0.244026 0.244026 0.04 0 0 -0.785398</pose>
+      <parent>base_link</parent>
+      <child>front_left_roller</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left_roller'>
+      <pose relative_to='front_left_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000255396</ixx>
+          <ixy>1.47172e-20</ixy>
+          <ixz>4.53957e-20</ixz>
+          <iyy>0.000128754</iyy>
+          <iyz>9.31736e-21</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_roller_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_left_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='front_left_roller_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_left_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_right_joint' type='revolute'>
+      <pose relative_to='base_link'>0.244026 -0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right</child>
+      <axis>
+        <xyz>0.707107 -0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right'>
+      <pose relative_to='front_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 -0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>-6.33213e-05</ixy>
+          <ixz>4.02341e-20</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>-3.854e-20</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_right.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='front_right_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_right.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_right_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>0.244026 -0.244026 0.04 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_roller</child>
+      <axis>
+        <xyz>-0.707107 -0.707107 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right_roller'>
+      <pose relative_to='front_right_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 -0 0 -0 0</pose>
+        <mass>0.126677</mass>
+        <inertia>
+          <ixx>0.000192075</ixx>
+          <ixy>6.33213e-05</ixy>
+          <ixz>-6.35275e-21</ixz>
+          <iyy>0.000192075</iyy>
+          <iyz>-1.3976e-20</iyz>
+          <izz>0.000128754</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_roller_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_right_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='front_right_roller_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_r2_robot_description/meshes/front_right_roller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- *********************** WHEEL ODOMETRY ***************************    -->
+
+    <plugin name="omni_steering" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>50.0</odometryRate>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishTF>false</publishTF>
+    </plugin>
+
+    <!-- *********************** JOINT STATE PUBLISHER *********************   -->
+
+    <plugin name="my_r2_robot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <remapping>~/out:=joint_states</remapping>
+      </ros>
+      <update_rate>30</update_rate>
+      <joint_name>back_left_joint</joint_name>
+      <joint_name>back_left_roller_joint</joint_name>
+      <joint_name>back_right_joint</joint_name>
+      <joint_name>back_right_roller_joint</joint_name>
+      <joint_name>front_left_joint</joint_name>
+      <joint_name>front_left_roller_joint</joint_name>
+      <joint_name>front_right_joint</joint_name>
+      <joint_name>front_right_roller_joint</joint_name>
+    </plugin>
+
+  </model>
+</sdf>

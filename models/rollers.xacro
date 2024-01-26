@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="roller" params="pos_side ixyz pkg jxyz jrpy axyz"> 
+  <link name="${pos_side}_roller">
+    <inertial>
+      <origin
+	xyz="${ixyz}"
+	rpy="0 0 0" />
+      <mass
+	value="0.005" />
+      <inertia
+	ixx="0.0000005"
+	ixy="0"
+	ixz="0"
+	iyy="0.00000025"
+	iyz="0"
+	izz="0.0000005" />
+    </inertial>
+    <visual>
+      <origin
+	xyz="0 0 0"
+	rpy="0 0 0" />
+      <geometry>
+	<mesh
+	  filename="package://${pkg}/meshes/${pos_side}_roller.dae" />
+      </geometry>
+      <material
+	name="">
+	<color
+	  rgba="0.792156862745098 0.819607843137255 0.933333333333333 2" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+	xyz="0 0 0"
+	rpy="0 0 0" />
+      <geometry>
+	<mesh
+	  filename="package://${pkg}/meshes/${pos_side}_roller.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${pos_side}_roller_joint"
+    type="continuous">
+    <origin
+      xyz="${jxyz}"
+      rpy="${jrpy}" />
+    <parent
+      link="base_link" />
+    <child
+      link="${pos_side}_roller" />
+    <axis
+      xyz="${axyz}" />
+  </joint>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,36 @@
+<sdf version='1.7'>
+  <model name='blue_ball'>
+    <link name='blue_ball'>
+      <inertial>
+        <pose>0 -0 0 0 -0 0</pose>
+        <mass>0.325</mass>
+        <inertia>
+          <ixx>0.00117325</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00117325</iyy>
+          <iyz>0</iyz>
+          <izz>0.00117325</izz>
+        </inertia>
+      </inertial>
+      <collision name='blue_ball_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='blue_ball_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://blue_ball/meshes/blue_ball.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
