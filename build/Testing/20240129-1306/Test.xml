@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240129-1306-Experimental"
+	Name="amshu-Modern-14-B4MW"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="amshu-Modern-14-B4MW"
+	OSRelease="6.5.0-15-generic"
+	OSVersion="#15~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 12 18:54:30 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="23"
+	ModelID="96"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="6"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="975"
+	TotalPhysicalMemory="7324"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2420.53"
+	>
+	<Testing>
+		<StartDateTime>Jan 29 18:49 IST</StartDateTime>
+		<StartTestTime>1706534370</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jan 29 18:49 IST</EndDateTime>
+		<EndTestTime>1706534370</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

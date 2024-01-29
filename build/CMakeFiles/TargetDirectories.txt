@@ -1,0 +1,9 @@
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/uninstall.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/my_r2_robot_uninstall.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/test.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/edit_cache.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/rebuild_cache.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/list_install_components.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/install.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/install/local.dir
+/home/amshu/ros2_ws/src/my_r2_robot/build/CMakeFiles/install/strip.dir
